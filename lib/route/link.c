@@ -1225,7 +1225,7 @@ int rtnl_link_build_get_request(int ifindex, const char *name,
 	struct ifinfomsg ifi;
 	struct nl_msg *msg;
 	__u32 vf_mask = RTEXT_FILTER_VF;
-	int err;
+	int err = -NLE_MSGSIZE;
 
 	if (ifindex <= 0 && !name) {
 		APPBUG("ifindex or name must be specified");
